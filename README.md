@@ -52,14 +52,31 @@ Every hour:
 | `maxDeltaDriftPct` | 2% | Delta drift tolerance before rebalance |
 | `maxLeverage` | 2.0x | Maximum total leverage |
 
-## Setup
+## Quick Start
 
 ```bash
 npm install
+npm run build
+
+# Run the funding rate monitor (read-only, no wallet needed)
+SOLANA_ENV=devnet npm run monitor
+
+# Run the full vault strategy
 export SOLANA_RPC_URL="https://api.devnet.solana.com"
 export VAULT_KEYPAIR_PATH="/path/to/keypair.json"
 export SOLANA_ENV="devnet"
-npx ts-node src/index.ts
+npm start
+```
+
+### Sample Output
+
+```
+=== Drift Funding Rate Monitor ===
+Connected to Drift (devnet). Found 18 markets.
+
+1. BTC-PERP (perp #1)    -8,057,986% APY  →  Short Spot / Long Perp
+2. ETH-PERP (perp #8)      -761,257% APY  →  Short Spot / Long Perp
+3. SOL-PERP (perp #0)        1,806% APY  →  Long Spot / Short Perp
 ```
 
 ## Risk Disclosure

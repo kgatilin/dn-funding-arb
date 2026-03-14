@@ -24,6 +24,7 @@ import {
   PositionDirection,
   OrderType,
   BASE_PRECISION,
+  decodeName,
 } from "@drift-labs/sdk";
 
 export interface FundingOpportunity {
@@ -101,7 +102,7 @@ export function analyzeFundingOpportunities(
     opportunities.push({
       perpMarketIndex: marketIndex,
       spotMarketIndex,
-      symbol: `Market-${marketIndex}`,
+      symbol: decodeName(perpMarket.name),
       fundingRate: annualizedRate,
       fundingRateHourly: hourlyRate,
       direction,
