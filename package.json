@@ -1,0 +1,26 @@
+{
+  "name": "delta-neutral-funding-vault",
+  "version": "0.1.0",
+  "description": "AI-driven delta-neutral funding rate arbitrage vault on Drift",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "monitor": "node dist/monitor.js"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.29.0",
+    "@drift-labs/sdk": "^2.159.0-beta.2",
+    "@drift-labs/vaults-sdk": "^0.10.1",
+    "@solana/web3.js": "^1.98.0",
+    "bn.js": "^5.2.1",
+    "dotenv": "^17.3.1",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.5",
+    "@types/node": "^22.19.15",
+    "typescript": "^5.9.3"
+  }
+}
